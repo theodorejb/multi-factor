@@ -3,21 +3,22 @@
 Designed to be a vendor-agnostic implementation of various Two-Factor 
 Authentication solutions.
 
-Developed by [Paragon Initiative Enterprises](https://paragonie.com) for use
-in our own projects. It's released under a dual license: GPL and MIT. As with
-all dual-licensed projects, feel free to choose the license that fits your
-needs.
+Fork of [paragonie/multi_factor](https://github.com/paragonie/multi_factor).
+Initially developed by [Paragon Initiative Enterprises](https://paragonie.com)
+for use in their own projects. Forked to support PHP 8+ since the original project
+wasn't being maintained.
+
+Released under a dual license: GPL and MIT. As with all dual-licensed projects,
+feel free to choose the license that fits your needs.
 
 ## Requirements
 
 * PHP 7.2+
-  * As per [Paragon Initiative Enterprise's commitment to open source](https://paragonie.com/blog/2016/04/go-php-7-our-commitment-maintaining-our-open-source-projects),
-    all new software will no longer be written for PHP 5.
 
 ## Installing
 
 ```sh
-composer require paragonie/multi-factor
+composer require theodorejb/multi-factor
 ```
 
 ## Example Usage

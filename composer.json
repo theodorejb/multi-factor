@@ -1,5 +1,5 @@
 {
-  "name": "paragonie/multi-factor",
+  "name": "theodorejb/multi-factor",
   "description": "Vendor-agnostic two-factor authentication library",
   "keywords": [
     "TOTP",
@@ -14,8 +14,7 @@
   ],
   "license": [
     "GPL-3.0+",
-    "MIT",
-    "proprietary"
+    "MIT"
   ],
   "type": "library",
   "authors": [
@@ -27,9 +26,8 @@
     }
   ],
   "support": {
-    "issues":   "https://github.com/paragonie/multi_factor/issues",
-    "email":    "info@paragonie.com",
-    "source":   "https://github.com/paragonie/multi_factor"
+    "issues":   "https://github.com/theodorejb/multi-factor/issues",
+    "source":   "https://github.com/theodorejb/multi-factor"
   },
   "require": {
     "php": ">=7.2",
