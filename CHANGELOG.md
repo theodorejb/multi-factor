@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - PHP 7.2+ is now required.
 - Updated BaconQrCode dependency to v2. This version has a slightly different API for rendering QR code images.
+- Test files are now excluded from Composer package.
 
 ### Removed
 - `GoogleAuth->defaultQRCodeWidth` and `GoogleAuth->defaultQRCodeHeight` properties.
