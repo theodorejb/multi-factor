@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Added
+- Native property type declarations.
+
+### Changed
+- PHP 7.4+ is now required.
+- Unified internal code for HOTP value generation.
+- Resolved all level one static analysis errors.
+- `GoogleAuth::getQRCode()` method now uses an explicit nullable type for optional `Writer` parameter.
+
+### Removed
+- Unused internal `rawOutput` option.
 
 
 ## [1.0.0] - 2021-01-14
