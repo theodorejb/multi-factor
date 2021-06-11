@@ -40,7 +40,6 @@ class TOTP implements OTPInterface
      * @ref https://tools.ietf.org/html/rfc6238
      * @param string|HiddenString $sharedSecret The key to use for determining the TOTP
      * @param int $counterValue    Current time or HOTP counter
-     * @return string
      * @throws \OutOfRangeException
      */
     public function getCode($sharedSecret, int $counterValue): string
@@ -67,17 +66,10 @@ class TOTP implements OTPInterface
     {
         $value = \intdiv(
             $unixTimestamp - $this->timeZero,
-            $this->timeStep !== 0
-                ? $this->timeStep
-                : 1
+            $this->timeStep !== 0 ? $this->timeStep : 1
         );
 
-        $hex = \str_pad(
-            \dechex($value),
-            16,
-            '0',
-            STR_PAD_LEFT
-        );
+        $hex = \str_pad(\dechex($value), 16, '0', STR_PAD_LEFT);
 
         return Hex::decode($hex);
     }

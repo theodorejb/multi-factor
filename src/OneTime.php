@@ -22,14 +22,14 @@ class OneTime implements MultiFactorInterface
      * @param string|HiddenString $secretKey
      * @param OTPInterface|null $otp
      */
-    public function __construct(
-        $secretKey = '',
-        ?OTPInterface $otp = null
-    ) {
+    public function __construct($secretKey = '', ?OTPInterface $otp = null)
+    {
         $this->secretKey = ($secretKey instanceof HiddenString) ? $secretKey : new HiddenString($secretKey);
+
         if ($otp === null) {
             $otp = new TOTP();
         }
+
         $this->otp = $otp;
     }
 

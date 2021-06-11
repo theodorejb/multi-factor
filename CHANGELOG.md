@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+
+
+## [1.0.1] - 2021-06-11
 ### Added
 - Native property type declarations.
 
@@ -62,7 +65,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial pre-release
 
 
-[Unreleased]: https://github.com/theodorejb/multi-factor/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/theodorejb/multi-factor/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/theodorejb/multi-factor/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/theodorejb/multi-factor/compare/v0.2.2...v1.0.0
 [0.2.2]: https://github.com/theodorejb/multi-factor/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/theodorejb/multi-factor/compare/v0.2.0...v0.2.1

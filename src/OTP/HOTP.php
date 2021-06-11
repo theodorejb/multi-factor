@@ -88,20 +88,14 @@ class HOTP implements OTPInterface
             \unpack('C*', Binary::safeSubstr($bytes, $offset, 4))
         );
 
-        $intValue = (
-            (($unpacked[0] & 0x7f) << 24)
-            | (($unpacked[1] & 0xff) << 16)
-            | (($unpacked[2] & 0xff) <<  8)
-            | (($unpacked[3] & 0xff)      )
-        );
+        $intValue =
+            (($unpacked[0] & 0x7f) << 24) |
+            (($unpacked[1] & 0xff) << 16) |
+            (($unpacked[2] & 0xff) <<  8) |
+            ($unpacked[3] & 0xff);
 
         $intValue %= 10 ** $length;
 
-        return \str_pad(
-            (string) $intValue,
-            $length,
-            '0',
-            \STR_PAD_LEFT
-        );
+        return \str_pad((string) $intValue, $length, '0', \STR_PAD_LEFT);
     }
 }

@@ -106,6 +106,7 @@ class GoogleAuth extends OneTime
                 new RendererStyle($this->defaultQRCodeSize),
                 new ImagickImageBackEnd()
             );
+
             $qrCodeWriter = new Writer($renderer);
         }
 
