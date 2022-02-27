@@ -13,10 +13,6 @@ use \ParagonIE\MultiFactor\OTP\{
     TOTP
 };
 
-/**
- * Class GoogleAuth
- * @package ParagonIE\MultiFactor\Vendor
- */
 class GoogleAuth extends OneTime
 {
     public int $defaultQRCodeSize = 384;

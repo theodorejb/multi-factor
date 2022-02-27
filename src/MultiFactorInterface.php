@@ -4,11 +4,7 @@ declare(strict_types=1);
 namespace ParagonIE\MultiFactor;
 
 /**
- * Interface MultiFactorInterface
- *
  * All MFA solutions should implement this interface.
- *
- * @package ParagonIE\MultiFactor
  */
 interface MultiFactorInterface
 {

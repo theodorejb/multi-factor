@@ -5,10 +5,6 @@ namespace ParagonIE\MultiFactor\OTP;
 use ParagonIE\ConstantTime\Hex;
 use ParagonIE\HiddenString\HiddenString;
 
-/**
- * Class TOTP
- * @package ParagonIE\MultiFactor\OTP
- */
 class TOTP implements OTPInterface
 {
     protected string $algo;

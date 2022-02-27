@@ -4,10 +4,6 @@ namespace ParagonIE\MultiFactor\OTP;
 
 use ParagonIE\HiddenString\HiddenString;
 
-/**
- * Interface OTPInterface
- * @package ParagonIE\MultiFactor\OTP
- */
 interface OTPInterface
 {
     /**

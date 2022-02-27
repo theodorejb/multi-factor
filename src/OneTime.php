@@ -8,11 +8,6 @@ use ParagonIE\MultiFactor\OTP\{
 };
 use ParagonIE\HiddenString\HiddenString;
 
-/**
- * Class OneTime
- *
- * @package ParagonIE\MultiFactor
- */
 class OneTime implements MultiFactorInterface
 {
     protected OTPInterface $otp;

@@ -12,13 +12,11 @@ use \PHPUnit\Framework\TestCase;
 class GoogleAuthTest extends TestCase
 {
     /**
-     * @psalm-return Generator<int, array{0:string, 1:string, 2:string, 3:string, 4:int, 5:GoogleAuth, 6:Writer|null}>
+     * @return Generator<int, array{0: string, 1: string, 2: string, 3: string, 4: int, 5: GoogleAuth, 6: Writer|null}>
      */
-    public function dataProviderMakeQRCodeMessage() : Generator
+    public function dataProviderMakeQRCodeMessage(): Generator
     {
-        $seed = Hex::decode(
-            "3132333435363738393031323334353637383930"
-        );
+        $seed = Hex::decode('3132333435363738393031323334353637383930');
 
         // Seed for HMAC-SHA512 - 64 bytes
         $seed64 = Hex::decode(
@@ -136,13 +134,7 @@ class GoogleAuthTest extends TestCase
             $initialCounter
         );
 
-        $googleAuth->makeQRCode(
-            $writer,
-            (__DIR__ . '/fixtures/' . hash('sha512', $message) . '.qrcode.txt'),
-            $username,
-            $issuer,
-            $label,
-            $initialCounter
-        );
+        $path = __DIR__ . '/fixtures/' . hash('sha512', $message) . '.qrcode.txt';
+        $googleAuth->makeQRCode($writer, $path, $username, $issuer, $label, $initialCounter);
     }
 }

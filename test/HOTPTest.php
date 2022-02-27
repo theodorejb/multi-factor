@@ -5,9 +5,6 @@ use ParagonIE\ConstantTime\Hex;
 use ParagonIE\MultiFactor\OTP\HOTP;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class HOTPTest
- */
 class HOTPTest extends TestCase
 {
     /**
@@ -15,9 +12,7 @@ class HOTPTest extends TestCase
      */
     public function testTOTP(): void
     {
-        $seed = Hex::decode(
-            "3132333435363738393031323334353637383930"
-        );
+        $seed = Hex::decode('3132333435363738393031323334353637383930');
         $hotp = new HOTP();
 
         $this->assertSame('755224', $hotp->getCode($seed, 0));
@@ -35,7 +30,7 @@ class HOTPTest extends TestCase
     /**
      * @dataProvider dataProviderFailureOfGetCode
      *
-     * @psalm-param class-string<\Throwable> $expectedException
+     * @param class-string<Throwable> $expectedException
      */
     public function testFailureOfGetCode(
         int $length,
@@ -55,25 +50,23 @@ class HOTPTest extends TestCase
     }
 
     /**
-     * @psalm-return array<int, array{0:int, 1:class-string<\Throwable>, 2:string, 3:string, 4:int}>
+     * @return array<int, array{0: int, 1: class-string<Throwable>, 2: string, 3: string, 4: int}>
      */
     public function dataProviderFailureOfGetCode(): array
     {
-        $seed = Hex::decode(
-            "3132333435363738393031323334353637383930"
-        );
+        $seed = Hex::decode('3132333435363738393031323334353637383930');
 
         return [
             [
                 0,
-                \OutOfRangeException::class,
+                OutOfRangeException::class,
                 'Length must be between 1 and 10, as a consequence of RFC 6238.',
                 $seed,
                 0,
             ],
             [
                 11,
-                \OutOfRangeException::class,
+                OutOfRangeException::class,
                 'Length must be between 1 and 10, as a consequence of RFC 6238.',
                 $seed,
                 0,

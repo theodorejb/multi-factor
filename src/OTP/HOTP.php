@@ -8,10 +8,6 @@ use ParagonIE\ConstantTime\{
 };
 use ParagonIE\HiddenString\HiddenString;
 
-/**
- * Class HOTP
- * @package ParagonIE\MultiFactor\OTP
- */
 class HOTP implements OTPInterface
 {
     protected string $algo;
