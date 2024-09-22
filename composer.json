@@ -23,6 +23,12 @@
       "email":    "security@paragonie.com",
       "homepage": "https://paragonie.com",
       "role":     "Developer"
+    },
+    {
+      "name":     "Theodore Brown",
+      "email":    "theodorejb@outlook.com",
+      "homepage": "https://theodorejb.me",
+      "role":     "Developer"
     }
   ],
   "support": {
