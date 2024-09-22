@@ -5,10 +5,10 @@ namespace ParagonIE\MultiFactor\Vendor;
 use BaconQrCode\Renderer\Image\ImagickImageBackEnd;
 use BaconQrCode\Renderer\ImageRenderer;
 use BaconQrCode\Renderer\RendererStyle\RendererStyle;
-use \BaconQrCode\Writer;
-use \ParagonIE\ConstantTime\Base32;
+use BaconQrCode\Writer;
+use ParagonIE\ConstantTime\Base32;
 use ParagonIE\MultiFactor\OneTime;
-use \ParagonIE\MultiFactor\OTP\{
+use ParagonIE\MultiFactor\OTP\{
     HOTP,
     TOTP
 };
@@ -74,7 +74,7 @@ class GoogleAuth extends OneTime
 
         $message .= \urlencode($username);
         $args = [
-            'secret' => Base32::encode($this->secretKey->getString())
+            'secret' => Base32::encode($this->secretKey)
         ];
 
         if ($issuer) {

@@ -3,7 +3,6 @@ declare(strict_types=1);
 namespace ParagonIE\MultiFactor\OTP;
 
 use ParagonIE\ConstantTime\Hex;
-use ParagonIE\HiddenString\HiddenString;
 
 class TOTP implements OTPInterface
 {
@@ -34,15 +33,14 @@ class TOTP implements OTPInterface
      * Generate a TOTP secret in accordance with RFC 6238
      *
      * @ref https://tools.ietf.org/html/rfc6238
-     * @param string|HiddenString $sharedSecret The key to use for determining the TOTP
+     * @param string $sharedSecret The key to use for determining the TOTP
      * @param int $counterValue    Current time or HOTP counter
      * @throws \OutOfRangeException
      */
-    public function getCode(string|HiddenString $sharedSecret, int $counterValue): string
+    public function getCode(string $sharedSecret, int $counterValue): string
     {
-        $key = is_string($sharedSecret) ? $sharedSecret : $sharedSecret->getString();
         $msg = $this->getTValue($counterValue);
-        return HOTP::generateHOTPValue($this->length, $key, $this->algo, $msg);
+        return HOTP::generateHOTPValue($this->length, $sharedSecret, $this->algo, $msg);
     }
 
     public function getLength(): int
