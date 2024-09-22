@@ -6,7 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [Unreleased]
+## [2.0.0] - 2024-09-22
+### Changed
+- Updated [BaconQrCode] dependency to v3.
+- PHP 8.1+ is now required.
+
+### Removed
+- [HiddenString](https://github.com/paragonie/hidden-string) dependency.
 
 
 ## [1.0.1] - 2021-06-11
@@ -33,7 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - PHP 7.2+ is now required.
 - Renamed `FIDOU2F` class to `OneTime`.
-- Updated [BaconQrCode](https://github.com/Bacon/BaconQrCode/) dependency to v2.
+- Updated [BaconQrCode] dependency to v2.
   This version has a slightly different API for rendering QR code images.
 - Test files are now excluded from Composer package.
 
@@ -65,10 +71,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial pre-release
 
 
-[Unreleased]: https://github.com/theodorejb/multi-factor/compare/v1.0.1...HEAD
+[2.0.0]: https://github.com/theodorejb/multi-factor/compare/v1.0.1...v2.0.0
 [1.0.1]: https://github.com/theodorejb/multi-factor/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/theodorejb/multi-factor/compare/v0.2.2...v1.0.0
 [0.2.2]: https://github.com/theodorejb/multi-factor/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/theodorejb/multi-factor/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/theodorejb/multi-factor/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/theodorejb/multi-factor/tree/v0.1.0
+[BaconQrCode]: https://github.com/Bacon/BaconQrCode
