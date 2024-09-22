@@ -165,7 +165,7 @@ class TOTPTest extends TestCase
     /**
      * @return Generator<int, array{0: array{0: int, 1: int, 2: int, 3: string}, 1: class-string<Throwable>, 2: string, 3: string, 4: int}, mixed, void>
      */
-    public function dataProviderFailureOfGetCode(): Generator
+    public static function dataProviderFailureOfGetCode(): Generator
     {
         $seed = Hex::decode('3132333435363738393031323334353637383930');
         $seed32 = Hex::decode(

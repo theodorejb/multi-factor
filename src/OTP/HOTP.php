@@ -29,10 +29,9 @@ class HOTP implements OTPInterface
      * @ref https://tools.ietf.org/html/rfc4226
      * @param string|HiddenString $sharedSecret The key to use for determining the HOTP
      * @param int $counterValue    Current time or HOTP counter
-     * @return string
      * @throws \OutOfRangeException
      */
-    public function getCode($sharedSecret, int $counterValue): string
+    public function getCode(string|HiddenString $sharedSecret, int $counterValue): string
     {
         $key = is_string($sharedSecret) ? $sharedSecret : $sharedSecret->getString();
         $msg = $this->getTValue($counterValue);

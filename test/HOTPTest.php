@@ -52,7 +52,7 @@ class HOTPTest extends TestCase
     /**
      * @return array<int, array{0: int, 1: class-string<Throwable>, 2: string, 3: string, 4: int}>
      */
-    public function dataProviderFailureOfGetCode(): array
+    public static function dataProviderFailureOfGetCode(): array
     {
         $seed = Hex::decode('3132333435363738393031323334353637383930');
 

@@ -38,7 +38,7 @@ class TOTP implements OTPInterface
      * @param int $counterValue    Current time or HOTP counter
      * @throws \OutOfRangeException
      */
-    public function getCode($sharedSecret, int $counterValue): string
+    public function getCode(string|HiddenString $sharedSecret, int $counterValue): string
     {
         $key = is_string($sharedSecret) ? $sharedSecret : $sharedSecret->getString();
         $msg = $this->getTValue($counterValue);

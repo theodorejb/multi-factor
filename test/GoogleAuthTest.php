@@ -1,20 +1,20 @@
 <?php
 declare(strict_types=1);
 
-use \BaconQrCode\Writer;
-use \BaconQrCode\Renderer\PlainTextRenderer;
-use \ParagonIE\ConstantTime\Hex;
-use \ParagonIE\MultiFactor\OTP\HOTP;
-use \ParagonIE\MultiFactor\OTP\TOTP;
-use \ParagonIE\MultiFactor\Vendor\GoogleAuth;
-use \PHPUnit\Framework\TestCase;
+use BaconQrCode\Writer;
+use BaconQrCode\Renderer\PlainTextRenderer;
+use ParagonIE\ConstantTime\Hex;
+use ParagonIE\MultiFactor\OTP\HOTP;
+use ParagonIE\MultiFactor\OTP\TOTP;
+use ParagonIE\MultiFactor\Vendor\GoogleAuth;
+use PHPUnit\Framework\TestCase;
 
 class GoogleAuthTest extends TestCase
 {
     /**
      * @return Generator<int, array{0: string, 1: string, 2: string, 3: string, 4: int, 5: GoogleAuth, 6: Writer|null}>
      */
-    public function dataProviderMakeQRCodeMessage(): Generator
+    public static function dataProviderMakeQRCodeMessage(): Generator
     {
         $seed = Hex::decode('3132333435363738393031323334353637383930');
 

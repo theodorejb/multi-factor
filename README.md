@@ -13,7 +13,7 @@ feel free to choose the license that fits your needs.
 
 ## Requirements
 
-* PHP 7.4+
+* PHP 8.1+
 
 ## Installing
 
