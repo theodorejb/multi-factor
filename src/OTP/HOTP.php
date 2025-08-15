@@ -72,14 +72,22 @@ class HOTP implements OTPInterface
         $byteLen = Binary::safeStrlen($bytes);
 
         // Per the RFC
+        $unpacked = \unpack('C', $bytes[$byteLen - 1]);
+        if ($unpacked === false) {
+            throw new \Exception('Failed to unpack data from binary string');
+        }
+
         /** @var int $offset */
-        $offset = \unpack('C', $bytes[$byteLen - 1])[1];
+        $offset = $unpacked[1];
         $offset &= 0x0f;
 
+        $unpacked = \unpack('C*', Binary::safeSubstr($bytes, $offset, 4));
+        if ($unpacked === false) {
+            throw new \Exception('Failed to unpack data from binary string');
+        }
+
         /** @var array{0: int, 1: int, 2: int, 3: int} $unpacked */
-        $unpacked = \array_values(
-            \unpack('C*', Binary::safeSubstr($bytes, $offset, 4))
-        );
+        $unpacked = \array_values($unpacked);
 
         $intValue =
             (($unpacked[0] & 0x7f) << 24) |

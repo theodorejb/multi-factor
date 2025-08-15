@@ -19,4 +19,8 @@
     <plugins>
         <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
     </plugins>
+    <issueHandlers>
+        <ClassMustBeFinal errorLevel="suppress" />
+        <MissingOverrideAttribute errorLevel="suppress" />
+    </issueHandlers>
 </psalm>
